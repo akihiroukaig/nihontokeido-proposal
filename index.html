@@ -340,13 +340,57 @@ img{max-width:100%;display:block}
 .team p{font-size:13.5px;color:var(--text-sub);line-height:2}
 
 /* ===== 実績 ===== */
-.works{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.works{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .work{border:1px solid var(--line);background:var(--bg)}
-.work img{aspect-ratio:16/10;object-fit:cover;background:#eee}
-.work .body{padding:18px 20px}
-.work .cat{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:8px}
-.work h4{font-size:15px;font-weight:500;letter-spacing:.04em;margin-bottom:8px}
-.work p{font-size:12.5px;color:var(--text-sub);line-height:1.85}
+.work img{aspect-ratio:9/16;object-fit:cover;background:#eee;width:100%;display:block}
+.work .body{padding:16px 18px}
+.work .cat{font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:8px}
+.work h4{font-size:14px;font-weight:500;letter-spacing:.03em;margin-bottom:8px;line-height:1.5}
+.work p{font-size:12px;color:var(--text-sub);line-height:1.85}
+
+/* Featured Case ヒーローカード */
+.case-hero{
+  border:1px solid var(--line-strong);
+  background:var(--bg-soft);
+  padding:36px 40px;
+}
+.case-hero-info .case-tag{
+  font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.32em;
+  color:var(--accent);text-transform:uppercase;display:block;margin-bottom:14px;
+}
+.case-hero-info .case-title{
+  font-size:22px;font-weight:500;letter-spacing:.04em;line-height:1.55;margin-bottom:14px;
+}
+.case-hero-info .case-desc{
+  font-size:13.5px;color:var(--text-sub);line-height:2;margin-bottom:24px;
+}
+.case-meta{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.case-meta .cm{background:#fff;padding:16px 18px}
+.case-meta .cml{
+  font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:.28em;
+  color:var(--text-muted);text-transform:uppercase;display:block;margin-bottom:6px;
+}
+.case-meta .cmv{font-size:13px;color:var(--text);line-height:1.65;font-weight:400}
+
+.case-result{margin-top:32px}
+.case-result .cr{
+  border-left:2px solid var(--accent);padding:6px 0 6px 22px;
+}
+.case-result .crl{
+  font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.32em;
+  color:var(--accent);text-transform:uppercase;display:block;margin-bottom:10px;
+}
+.case-result ul{list-style:none;padding:0}
+.case-result ul li{
+  font-size:13.5px;color:var(--text);line-height:2;
+  padding-left:18px;position:relative;
+}
+.case-result ul li::before{
+  content:"—";position:absolute;left:0;color:var(--accent);
+}
 
 /* ===== 見積もり ===== */
 .quote{
@@ -388,7 +432,9 @@ img{max-width:100%;display:block}
   .hero-title{font-size:42px}
   .hero-title .jp{font-size:16px;letter-spacing:.32em}
   .section-title{font-size:24px}
-  .summary-grid,.strengths,.tone,.delivery,.works,.mood,.ref-row{grid-template-columns:1fr !important}
+  .summary-grid,.strengths,.tone,.delivery,.mood,.ref-row,.case-meta{grid-template-columns:1fr !important}
+  .works{grid-template-columns:repeat(2,1fr) !important}
+  .case-hero{padding:24px 22px}
   .matrix{grid-template-columns:60px 1fr;grid-template-rows:auto auto auto auto auto}
   .matrix .m-h{display:none}
   .plan-head{grid-template-columns:1fr;gap:8px}
@@ -1239,27 +1285,72 @@ img{max-width:100%;display:block}
 <section class="section">
   <div class="container">
     <span class="section-num fade">— 13</span>
-    <span class="section-label fade">Track Record</span>
-    <h2 class="section-title fade">類縁ジャンルでの制作実績</h2>
-    <p class="section-lead fade">高級／プロダクト／ブランディング動画を中心に、世界観構築を伴う案件の実績を抜粋しています。</p>
+    <span class="section-label fade">Featured Case ／ Track Record</span>
+    <h2 class="section-title fade">時計小売 × 高級プロダクト動画の実績</h2>
+    <p class="section-lead fade">日本時計堂さんと最も近接する案件として、徳島で創業95年、ロレックス・グランドセイコー・ザ・シチズン等の正規販売店として知られる<strong>「時計・ジュエリー・メガネ ハラダ本店」（株式会社ハラダ）</strong>の広告動画制作・運用を担当しています。</p>
 
+    <div class="case-hero fade">
+      <div class="case-hero-info">
+        <span class="case-tag">FEATURED CASE — 2025-2026</span>
+        <h3 class="case-title">株式会社ハラダ ／ 時計・ジュエリー・メガネ ハラダ本店</h3>
+        <p class="case-desc">徳島県徳島市・1929年創業。ロレックス／チューダー／グランドセイコー／ザ・シチズン／カンパノラ／ノルケイン他、ハイブランド時計の正規販売店。<strong>AJHH（日本正規高級時計協会）加盟店</strong>。「品質は、人がつくる。信頼は、時がつくる。」をブランドテーマに、Meta／YouTube向けの高級プロダクト広告動画を継続制作。</p>
+        <div class="case-meta">
+          <div class="cm"><span class="cml">担当領域</span><span class="cmv">企画 ／ 撮影 ／ 編集 ／ Meta広告運用</span></div>
+          <div class="cm"><span class="cml">主な対象ブランド</span><span class="cmv">The CITIZEN ／ ATTESA ／ Platinum Shine Collection 他</span></div>
+          <div class="cm"><span class="cml">納品本数</span><span class="cmv">継続制作中（2026年4月時点で多数本）</span></div>
+        </div>
+      </div>
+    </div>
+
+    <span class="subhead fade" style="margin-top:48px">Sample Creatives — 制作動画より抜粋</span>
     <div class="works fade">
       <div class="work">
-        <img src="https://images.unsplash.com/photo-1610017171036-91d3e2c5f3a7?auto=format&fit=crop&w=900&q=80" alt="DeLonghi">
+        <img src="works/harada_03.jpg" alt="The CITIZEN AQ4100-22A">
         <div class="body">
-          <span class="cat">Home Appliance</span>
-          <h4>デロンギ（DeLonghi）</h4>
-          <p>プレミアムキッチン家電のブランド動画 5本制作。プロダクトの質感表現と、暮らしの中での所有感を伝えるシリーズ。</p>
+          <span class="cat">The CITIZEN ／ Brand Story</span>
+          <h4>「枕草子」に通ずる「をかし」の美意識</h4>
+          <p>The CITIZEN AQ4100-22A。和紙の質感を写し取った文字盤を、文学的なコピーと暗いトーンで物語化。日本時計堂のMV型に通底するアプローチ。</p>
         </div>
       </div>
       <div class="work">
-        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=80" alt="SALONIA">
+        <img src="works/harada_02.jpg" alt="ATTESA Platinum Shine Collection">
         <div class="body">
-          <span class="cat">Beauty</span>
-          <h4>サロニア（SALONIA）</h4>
-          <p>美容家電の広告動画10本。世界観の統一を担保しつつ、用途別カットを大量生成する量産設計。</p>
+          <span class="cat">ATTESA ／ Product Macro</span>
+          <h4>Platinum Shine Collection 「CB0284-66A」</h4>
+          <p>立体的なベゼルとプラチナシャイン文字盤のマクロ表現。光と陰影で素材感を見せるシネマティック撮影。販売MV型の参考事例。</p>
         </div>
       </div>
+      <div class="work">
+        <img src="works/harada_04.jpg" alt="The CITIZEN AQ5022-02W">
+        <div class="body">
+          <span class="cat">The CITIZEN ／ Hand & Craft</span>
+          <h4>至福の着け心地 「AQ5022-02W」</h4>
+          <p>白手袋がそっと時計を持ち上げる手元クローズアップ。日本時計堂の販売②MVで採用予定の「コンシェルジュの所作」と同系統の演出。</p>
+        </div>
+      </div>
+      <div class="work">
+        <img src="works/harada_01.jpg" alt="The CITIZEN AQ4100-65M">
+        <div class="body">
+          <span class="cat">The CITIZEN ／ Spec Highlight</span>
+          <h4>The CITIZEN ザ・シチズン AQ4100-65M</h4>
+          <p>金融訴求（無金利分割払い 最大100回）と商品スペックの両立。情報を入れつつもブランドの品格を崩さない構成設計。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-result fade">
+      <div class="cr">
+        <span class="crl">なぜこの実績がご参考になるか</span>
+        <ul>
+          <li>高単価×高ブランドイメージの<strong>時計小売業界そのものの実績</strong>であること</li>
+          <li>商品マクロ／所作／文学的コピー／スペック訴求まで<strong>本ご提案4本のフォーマット全てを既に経験済み</strong>であること</li>
+          <li>制作だけでなく<strong>Meta広告運用まで一気通貫</strong>で対応している実績</li>
+        </ul>
+      </div>
+    </div>
+
+    <span class="subhead fade" style="margin-top:64px">その他の関連実績</span>
+    <div class="works fade">
       <div class="work">
         <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=900&q=80" alt="TASAKI">
         <div class="body">
@@ -1269,26 +1360,18 @@ img{max-width:100%;display:block}
         </div>
       </div>
       <div class="work">
-        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80" alt="MLB">
+        <img src="https://images.unsplash.com/photo-1610017171036-91d3e2c5f3a7?auto=format&fit=crop&w=900&q=80" alt="DeLonghi">
         <div class="body">
-          <span class="cat">Global Brand</span>
-          <h4>MLB 日本PR動画</h4>
-          <p>グローバルブランドの日本展開向けPR動画。世界観の翻訳と、現地視聴者への接続設計を担当。</p>
-        </div>
-      </div>
-      <div class="work">
-        <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=900&q=80" alt="Luxury Brand">
-        <div class="body">
-          <span class="cat">Premium Product</span>
-          <h4>その他 高級ブランド広告</h4>
-          <p>高単価プロダクトの広告動画を複数手掛けています。守秘案件のため詳細はオフラインにて。</p>
+          <span class="cat">Premium Appliance</span>
+          <h4>デロンギ（DeLonghi）</h4>
+          <p>プレミアムキッチン家電のブランド動画 5本制作。プロダクトの質感表現と所有感を伝えるシリーズ。</p>
         </div>
       </div>
       <div class="work">
         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="Network">
         <div class="body">
           <span class="cat">Network</span>
-          <h4>StockSun 認定パートナー</h4>
+          <h4>StockSun 認定パートナー体制</h4>
           <p>300名超のクリエイターネットワークから、案件ごとに最適なフリーランス・専門会社をアサインする運営体制。</p>
         </div>
       </div>
