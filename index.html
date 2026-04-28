@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本時計堂 ｜ 動画クリエイティブご提案 ｜ StockSun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-soft:#fafaf7;
+  --text:#1a1a1a;
+  --text-sub:#6b6b6b;
+  --text-muted:#a8a8a8;
+  --line:#e8e4dc;
+  --line-strong:#1a1a1a;
+  --accent:#8b6f2e;
+  --accent-soft:#c9a96e;
+  --dark:#0e0e0e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  font-weight:300;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+.serif{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.02em}
+
+/* ===== 共通レイアウト ===== */
+.section{
+  padding:140px 0;
+  border-top:1px solid var(--line);
+}
+.section:first-of-type{border-top:none}
+.container{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 56px;
+}
+.section-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;
+  letter-spacing:.3em;
+  color:var(--text-muted);
+  margin-bottom:24px;
+  display:block;
+}
+.section-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:18px;
+  display:block;
+}
+.section-title{
+  font-size:32px;
+  font-weight:400;
+  letter-spacing:.04em;
+  line-height:1.5;
+  margin-bottom:18px;
+  color:var(--text);
+}
+.section-lead{
+  font-size:15px;
+  color:var(--text-sub);
+  max-width:680px;
+  margin-bottom:64px;
+  line-height:2;
+}
+
+/* ===== フェードイン演出 ===== */
+.fade{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease}
+.fade.is-visible{opacity:1;transform:none}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  min-height:720px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:56px 56px 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=2400&q=80');
+  background-size:cover;background-position:center;
+  filter:grayscale(.4) contrast(1.05);
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.55) 40%,rgba(255,255,255,.96) 100%);
+}
+.hero-top,.hero-mid,.hero-bot{position:relative;z-index:2}
+.hero-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.3em;color:var(--text-sub);text-transform:uppercase}
+.hero-top .brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.4em;color:var(--text)}
+.hero-mid{max-width:880px}
+.hero-eyebrow{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;letter-spacing:.45em;color:var(--accent);
+  margin-bottom:32px;text-transform:uppercase;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:68px;font-weight:400;line-height:1.15;letter-spacing:.02em;
+  color:var(--text);
+  margin-bottom:20px;
+}
+.hero-title .jp{
+  display:block;font-family:'Noto Sans JP',sans-serif;
+  font-weight:300;font-size:22px;letter-spacing:.45em;
+  color:var(--text-sub);margin-top:24px;
+}
+.hero-bot{display:flex;justify-content:space-between;align-items:flex-end;font-size:12px;letter-spacing:.18em;color:var(--text-sub)}
+.hero-bot .right{text-align:right}
+.hero-bot .label{display:block;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.38em;color:var(--text-muted);margin-bottom:6px;text-transform:uppercase}
+.hero-bot .value{font-size:14px;color:var(--text);letter-spacing:.1em;font-weight:400}
+
+/* ===== Executive Summary ===== */
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:48px;
+  margin-top:24px;
+}
+.summary-card{
+  border-top:1px solid var(--line-strong);
+  padding-top:28px;
+}
+.summary-card .num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px;font-weight:300;line-height:1;color:var(--accent);
+  margin-bottom:18px;display:block;
+}
+.summary-card h3{
+  font-size:17px;font-weight:500;line-height:1.7;margin-bottom:14px;letter-spacing:.04em;
+}
+.summary-card p{font-size:13.5px;color:var(--text-sub);line-height:1.95}
+
+/* ===== 課題と要望 ===== */
+.list-need{list-style:none;border-top:1px solid var(--line)}
+.list-need li{
+  display:grid;grid-template-columns:120px 1fr;gap:40px;
+  padding:28px 0;border-bottom:1px solid var(--line);
+}
+.list-need .tag{
+  font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;padding-top:6px;
+}
+.list-need .body strong{font-weight:500;color:var(--text);display:block;margin-bottom:6px;font-size:15.5px;letter-spacing:.03em}
+.list-need .body span{color:var(--text-sub);font-size:13.5px;line-height:1.95}
+
+/* ===== 強み 9つ ===== */
+.strengths{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.s-card{background:var(--bg);padding:36px 30px;min-height:200px}
+.s-card .badge{
+  font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.3em;color:var(--accent);
+  margin-bottom:14px;display:inline-block;text-transform:uppercase;
+}
+.s-card h4{font-size:15.5px;font-weight:500;line-height:1.7;margin-bottom:10px;letter-spacing:.04em}
+.s-card p{font-size:13px;color:var(--text-sub);line-height:1.85}
+
+/* ===== クリエイティブ方針（質感キーワード） ===== */
+.tone{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.t-cell{background:var(--bg);padding:30px 24px;min-height:160px}
+.t-cell .label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.32em;color:var(--text-muted);text-transform:uppercase;margin-bottom:12px;display:block}
+.t-cell .val{font-size:15px;font-weight:500;letter-spacing:.04em;line-height:1.6;margin-bottom:8px}
+.t-cell .desc{font-size:12.5px;color:var(--text-sub);line-height:1.8}
+
+/* ===== ポートフォリオ 2x2 ===== */
+.matrix{
+  display:grid;grid-template-columns:120px 1fr 1fr;grid-template-rows:60px 1fr 1fr;gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.matrix > div{background:var(--bg);padding:26px 22px;display:flex;flex-direction:column;justify-content:center}
+.m-h{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.25em;color:var(--text-sub);text-transform:uppercase;text-align:center}
+.m-axis{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.2em;color:var(--text-sub);writing-mode:vertical-rl;text-align:center;text-transform:uppercase}
+.m-cell .num{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--accent);font-weight:300;display:block;margin-bottom:6px}
+.m-cell h4{font-size:15px;font-weight:500;letter-spacing:.04em;margin-bottom:6px}
+.m-cell p{font-size:12.5px;color:var(--text-sub);line-height:1.85}
+
+/* ===== カバレッジテーブル ===== */
+.cover-table{width:100%;border-collapse:collapse;font-size:13px}
+.cover-table th,.cover-table td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:center}
+.cover-table th{font-weight:500;letter-spacing:.05em;color:var(--text-sub);font-size:12px;background:var(--bg-soft)}
+.cover-table th:first-child,.cover-table td:first-child{text-align:left;padding-left:18px;width:34%}
+.cover-table .b{color:var(--accent);font-size:16px}
+.cover-table .b-sub{color:var(--text-muted);font-size:14px}
+.cover-table tr.hl td{background:#fdfbf5}
+.cover-note{margin-top:18px;font-size:12.5px;color:var(--text-sub);letter-spacing:.04em}
+
+/* ===== 企画ページ ===== */
+.plan{padding:140px 0;border-top:1px solid var(--line)}
+.plan > .container{max-width:1240px} /* 企画ページのみ少し横広く */
+.plan-head{display:grid;grid-template-columns:120px 1fr;gap:40px;margin-bottom:56px}
+.plan-no{font-family:'Cormorant Garamond',serif;font-size:88px;font-weight:300;color:var(--accent);line-height:.9;letter-spacing:.02em}
+.plan-head .right .cat{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.32em;color:var(--text-muted);text-transform:uppercase;display:block;margin-bottom:12px}
+.plan-head .right .title{font-size:30px;font-weight:400;line-height:1.45;letter-spacing:.04em;margin-bottom:14px}
+.plan-head .right .sub{font-size:14px;color:var(--text-sub);line-height:1.95;max-width:680px}
+
+.plan-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:56px}
+.pm{background:var(--bg);padding:24px}
+.pm .l{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.32em;color:var(--text-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.pm .v{font-size:14px;line-height:1.75;color:var(--text);font-weight:400}
+
+/* 参考フォーマット（横並び） */
+.ref-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.ref{background:var(--bg-soft);border:1px solid var(--line);padding:20px}
+.ref .l{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.32em;color:var(--text-muted);text-transform:uppercase;margin-bottom:14px;display:block}
+.ref a{display:block;text-decoration:none;color:inherit}
+.ref img{aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);margin-bottom:10px}
+.ref .cap{font-size:12px;color:var(--text-sub);line-height:1.7}
+.ref .cap b{color:var(--text);font-weight:500}
+.ref-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+
+/* 強みバッジ */
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.badge-pill{
+  font-size:11px;letter-spacing:.08em;padding:5px 11px;
+  border:1px solid var(--accent);color:var(--accent);border-radius:999px;
+  background:#fff;font-weight:400;
+}
+.badge-pill.muted{border-color:var(--line-strong);color:var(--text-sub)}
+
+/* セクション内の小見出し（共通） */
+.subhead{
+  font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.32em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:20px;display:block;
+}
+
+/* 比較テーブル（販売①） */
+.cmp{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.cmp th,.cmp td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:center}
+.cmp th{font-weight:500;color:var(--text-sub);font-size:12px;letter-spacing:.05em;background:var(--bg-soft)}
+.cmp th:first-child,.cmp td:first-child{text-align:left;padding-left:18px;width:30%;font-weight:400}
+.cmp tr.us td{background:#fdfbf5;color:var(--text);font-weight:500}
+.cmp tr.us td:first-child{color:var(--accent)}
+
+/* ===== 台本ブロック（全幅・3カラム：TC ／ 構図イメージ ／ セリフ・演出） ===== */
+.script{
+  margin-top:8px;
+  border:1px solid var(--line);
+  background:var(--bg-soft);
+}
+.script-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:18px 32px;border-bottom:1px solid var(--line);
+}
+.script-head .l{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.32em;color:var(--accent);text-transform:uppercase}
+.script-head .meta{font-size:11.5px;color:var(--text-muted);letter-spacing:.18em}
+
+/* カラムヘッダ */
+.script-colhead{
+  display:grid;grid-template-columns:90px 280px 1fr;gap:28px;
+  padding:14px 32px;border-bottom:1px solid var(--line);
+  font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.28em;
+  color:var(--text-muted);text-transform:uppercase;background:#fff;
+}
+
+.script-row{
+  display:grid;grid-template-columns:90px 280px 1fr;gap:28px;
+  padding:24px 32px;border-bottom:1px solid var(--line);align-items:start;
+}
+.script-row:last-child{border-bottom:none}
+
+.script-row .tc{
+  font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.18em;
+  color:var(--accent);padding-top:2px;
+}
+
+/* 構図イメージ列 */
+.script-row .frame{
+  background:#fff;border:1px solid var(--line);padding:14px 16px;
+  font-size:12px;color:var(--text);line-height:1.85;
+}
+.script-row .frame .ftag{
+  font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:.28em;
+  color:var(--accent);text-transform:uppercase;display:block;margin-bottom:6px;
+}
+.script-row .frame .fdesc{font-size:12px;color:var(--text-sub);line-height:1.85}
+
+/* セリフ・演出列 */
+.script-row .body .speaker{
+  font-size:11px;letter-spacing:.32em;color:var(--text-muted);
+  text-transform:uppercase;margin-bottom:6px;display:block;
+}
+.script-row .body .line{
+  font-size:14.5px;color:var(--text);line-height:2;letter-spacing:.03em;
+  margin-bottom:8px;
+}
+.script-row .body .dir{
+  font-size:12.5px;color:var(--text-sub);line-height:1.9;
+  padding-left:14px;border-left:2px solid var(--line);
+  margin-top:10px;
+}
+.script-row .body .tele{
+  display:inline-block;
+  font-size:11.5px;color:var(--accent);letter-spacing:.05em;
+  background:#fff;border:1px solid var(--accent-soft);
+  padding:3px 11px;margin-top:10px;border-radius:2px;
+}
+
+/* ムードボード（販売②） */
+.mood{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.mood img{aspect-ratio:1/1;object-fit:cover;filter:grayscale(.2) contrast(1.02);border:1px solid var(--line)}
+
+/* ===== スケジュール ===== */
+.schedule{border-top:1px solid var(--line-strong)}
+.sch-row{display:grid;grid-template-columns:80px 220px 1fr 100px;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center}
+.sch-row .t{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--accent)}
+.sch-row .ttl{font-size:14.5px;font-weight:500;letter-spacing:.04em}
+.sch-row .desc{font-size:12.5px;color:var(--text-sub);line-height:1.8}
+.sch-row .dur{font-size:12px;color:var(--text-muted);text-align:right;letter-spacing:.05em}
+
+.delivery{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.delivery .d{background:var(--bg);padding:22px;text-align:left}
+.delivery .d .l{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:var(--text-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.delivery .d .v{font-size:14px;color:var(--text);font-weight:500;letter-spacing:.04em}
+.delivery .d .sub{font-size:12px;color:var(--text-sub);margin-top:4px;line-height:1.7}
+
+.team{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.team h4{font-size:14px;font-weight:500;letter-spacing:.06em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line-strong)}
+.team p{font-size:13.5px;color:var(--text-sub);line-height:2}
+
+/* ===== 実績 ===== */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.work{border:1px solid var(--line);background:var(--bg)}
+.work img{aspect-ratio:16/10;object-fit:cover;background:#eee}
+.work .body{padding:18px 20px}
+.work .cat{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:8px}
+.work h4{font-size:15px;font-weight:500;letter-spacing:.04em;margin-bottom:8px}
+.work p{font-size:12.5px;color:var(--text-sub);line-height:1.85}
+
+/* ===== 見積もり ===== */
+.quote{
+  border:1px solid var(--line-strong);
+  padding:48px 56px;
+  background:var(--bg-soft);
+}
+.quote-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line-strong);padding-bottom:18px;margin-bottom:28px}
+.quote-head h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:.05em}
+.quote-head .ph{font-size:11.5px;color:var(--text-muted);letter-spacing:.16em}
+.q-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);font-size:14px;align-items:baseline}
+.q-row.head{font-size:11px;color:var(--text-muted);letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--line-strong);font-family:'Cormorant Garamond',serif;font-weight:400}
+.q-row .ttl{font-weight:500;color:var(--text);font-size:14px;letter-spacing:.03em}
+.q-row .ttl .sub{display:block;font-size:11.5px;color:var(--text-sub);font-weight:300;margin-top:4px;letter-spacing:0}
+.q-row .qty{color:var(--text-sub);font-size:13px}
+.q-row .price{color:var(--text-muted);font-family:'Cormorant Garamond',serif;letter-spacing:.05em}
+.q-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:24px;margin-top:8px;border-top:2px solid var(--line-strong)}
+.q-total .l{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.3em;color:var(--text-sub);text-transform:uppercase}
+.q-total .v{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--text-muted);letter-spacing:.04em}
+.quote-note{font-size:11.5px;color:var(--text-sub);margin-top:24px;line-height:1.85}
+
+/* ===== CLOSING ===== */
+.closing{
+  background:var(--dark);color:#f3ede1;
+  padding:160px 0 80px;border-top:none;
+}
+.closing .container{text-align:center}
+.closing .label{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.45em;color:var(--accent-soft);text-transform:uppercase;margin-bottom:36px;display:block}
+.closing h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;line-height:1.5;letter-spacing:.04em;margin-bottom:24px}
+.closing .sub{font-size:14px;letter-spacing:.32em;color:#9c9385;margin-bottom:80px}
+.closing .foot{margin-top:80px;padding-top:36px;border-top:1px solid #2a2520;display:flex;justify-content:space-between;font-size:11.5px;letter-spacing:.18em;color:#9c9385}
+.closing .foot .brand{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:.42em;color:#f3ede1}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:880px){
+  .container{padding:0 28px}
+  .section{padding:90px 0}
+  .hero{padding:32px 28px 40px;min-height:580px}
+  .hero-title{font-size:42px}
+  .hero-title .jp{font-size:16px;letter-spacing:.32em}
+  .section-title{font-size:24px}
+  .summary-grid,.strengths,.tone,.delivery,.works,.mood,.ref-row{grid-template-columns:1fr !important}
+  .matrix{grid-template-columns:60px 1fr;grid-template-rows:auto auto auto auto auto}
+  .matrix .m-h{display:none}
+  .plan-head{grid-template-columns:1fr;gap:8px}
+  .plan-no{font-size:56px}
+  .plan-meta{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr;gap:24px}
+  .script-colhead,.script-row{grid-template-columns:60px 1fr;gap:14px;padding:18px 18px}
+  .script-colhead span:nth-child(2),.script-row .frame{grid-column:1 / -1;margin-left:74px}
+  .script-row .body{grid-column:1 / -1;margin-left:74px}
+  .quote{padding:32px 28px}
+  .q-row{grid-template-columns:1fr;gap:6px}
+  .sch-row{grid-template-columns:60px 1fr;gap:14px}
+  .sch-row .desc,.sch-row .dur{grid-column:1 / -1;padding-left:74px}
+  .closing h2{font-size:30px}
+  .list-need li{grid-template-columns:1fr;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== 01 HERO ==================== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-top">
+    <div class="brand">STOCKSUN</div>
+    <div>2026.04.28</div>
+  </div>
+  <div class="hero-mid">
+    <span class="hero-eyebrow">Creative Proposal for Nihon Tokeido</span>
+    <h1 class="hero-title">
+      A Time, Entrusted.
+      <span class="jp">日本時計堂｜動画クリエイティブご提案</span>
+    </h1>
+  </div>
+  <div class="hero-bot">
+    <div>
+      <span class="label">For</span>
+      <span class="value">株式会社ナハト　山口拓真 様</span>
+    </div>
+    <div class="right">
+      <span class="label">Prepared by</span>
+      <span class="value">StockSun 株式会社</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 02 EXECUTIVE SUMMARY ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 02</span>
+    <span class="section-label fade">Executive Summary</span>
+    <h2 class="section-title fade">本日の結論</h2>
+    <p class="section-lead fade">前回お伺いした課題に対し、<br>StockSunからご提案したい方向性は3点です。</p>
+
+    <div class="summary-grid">
+      <div class="summary-card fade">
+        <span class="num">01</span>
+        <h3>買取2本＋販売2本で、<br>ブランドの“階段”を作る</h3>
+        <p>各本の役割を「認知 → 比較 → 指名 → 記憶」と明確に分け、4本通して見るとブランドが積み上がる構成にしています。</p>
+      </div>
+      <div class="summary-card fade">
+        <span class="num">02</span>
+        <h3>参考フォーマットの骨格は活かしつつ<br>富裕層トーンに昇華</h3>
+        <p>カウントダウン／ロープレ／Q&A／MV というShorts定番の骨格を、ハイブランド広告のトーンで再構築します。</p>
+      </div>
+      <div class="summary-card fade">
+        <span class="num">03</span>
+        <h3>VIPルームでまとめ撮り、<br>世界観の統一を担保</h3>
+        <p>渋谷マークシティのVIPルームを唯一の撮影空間とし、全4本に「日本時計堂＝ここ」の連想を通底させます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 03 課題と要望 ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 03</span>
+    <span class="section-label fade">Briefing Recap</span>
+    <h2 class="section-title fade">前回お伺いした課題と要望</h2>
+    <p class="section-lead fade">2026年4月22日の初回商談で山口様から共有いただいた論点を、本提案の出発点として整理しました。</p>
+
+    <ul class="list-need fade">
+      <li>
+        <span class="tag">Need 01</span>
+        <div class="body">
+          <strong>「他の二次流通にない温かみ・人間的な信頼感」を映像で表現したい</strong>
+          <span>機械的な査定ではない、1対1のコンシェルジュ対応をどう画で見せるかが鍵。買取②のドラマ仕立てで主役の訴求として扱います。</span>
+        </div>
+      </li>
+      <li>
+        <span class="tag">Need 02</span>
+        <div class="body">
+          <strong>「ここで買うステータス感」を販売動画で訴求したい</strong>
+          <span>ブランドイメージを崩さず、安心・信頼・ステータスを伝える。販売②シネマティックMVを世界観の中核に据えます。</span>
+        </div>
+      </li>
+      <li>
+        <span class="tag">Need 03</span>
+        <div class="body">
+          <strong>買取は間口を広く、販売はブランドイメージを守って</strong>
+          <span>4本の役割を明確に分担。買取①でアフィリ的な広域リーチ、販売①でロジカルな指名獲得を担います。</span>
+        </div>
+      </li>
+      <li>
+        <span class="tag">Need 04</span>
+        <div class="body">
+          <strong>アイデア出しはStockSun側に任せたい</strong>
+          <span>本提案では、企画意図・絵コンテ・セリフまで先回りして詰めています。撮影現場でも演出をリードします。</span>
+        </div>
+      </li>
+      <li>
+        <span class="tag">Need 05</span>
+        <div class="body">
+          <strong>比較検討の決め手は、費用対効果・クオリティ・時計ジャンル実績</strong>
+          <span>本提案末尾に類縁ジャンルの実績を提示。撮影体制と納品スケジュールも具体化しました。</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== 04 ナハトの強み 9つ ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 04</span>
+    <span class="section-label fade">Brand Assets</span>
+    <h2 class="section-title fade">日本時計堂さんの強み — 9つ</h2>
+    <p class="section-lead fade">議事録・訴求方針スライド・公式HPから、映像で扱える強みを9つに整理しました。<br>これを「どの本でどう使うか」を次セクション以降で設計しています。</p>
+
+    <div class="strengths fade">
+      <div class="s-card"><span class="badge">A</span><h4>海外コレクターからのオーダーが殺到</h4><p>香港・ドバイ・ニューヨーク。海外エンドユーザー需要に支えられた高額買取。</p></div>
+      <div class="s-card"><span class="badge">B</span><h4>30か国超のネットワーク</h4><p>世界のディーラー網からスピード手配。希少モデルへの即応力。</p></div>
+      <div class="s-card"><span class="badge">C</span><h4>無在庫オーダー制</h4><p>中間マージン・在庫リスクなし。高額になるほど割引率が大きくなる構造。</p></div>
+      <div class="s-card"><span class="badge">D</span><h4>常時1,000点超ストック</h4><p>3,000万・5,000万円クラスも豊富。圧倒的な流通量。</p></div>
+      <div class="s-card"><span class="badge">E</span><h4>国家資格技師の真贋／全品5年保証</h4><p>専門コンシェルジュの誠実な査定と、購入後の長期安心。</p></div>
+      <div class="s-card"><span class="badge">F</span><h4>温かみと人間的な信頼感</h4><p>LINE起点の1対1コンシェルジュ対応。他社にない関係性の質。</p></div>
+      <div class="s-card"><span class="badge">G</span><h4>渋谷マークシティのVIPルーム</h4><p>リアルな場所性が、オンライン完結に“安心感”を加える。</p></div>
+      <div class="s-card"><span class="badge">H</span><h4>秘匿性を求めるオーナーが利用</h4><p>芸能人・プロアスリート・経営者。人目を避けたい層の支持。</p></div>
+      <div class="s-card"><span class="badge">I</span><h4>ハイブランドを網羅</h4><p>Patek Philippe、Audemars Piguet、Richard Mille、Vacheron 他。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 05 クリエイティブ方針 ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 05</span>
+    <span class="section-label fade">Creative Direction</span>
+    <h2 class="section-title fade">私たちが目指す“質感”</h2>
+    <p class="section-lead fade">数千万〜数億円の時計を扱うブランドにふさわしい、富裕層向けの映像トーン。<br>4本すべてに通底する基準を、8つの要素で言語化しました。</p>
+
+    <div class="tone fade">
+      <div class="t-cell"><span class="label">Color</span><div class="val">深いシャドウ</div><div class="desc">ディープブラック基調、控えめなゴールドアクセント。</div></div>
+      <div class="t-cell"><span class="label">Light</span><div class="val">単灯ハイライト</div><div class="desc">レンブラント風の陰影と、文字盤の窓光反射。</div></div>
+      <div class="t-cell"><span class="label">Camera</span><div class="val">ジンバル＆三脚固定</div><div class="desc">24fps感のシネマライク、浅い被写界深度。</div></div>
+      <div class="t-cell"><span class="label">Typography</span><div class="val">セリフ体ミニマル</div><div class="desc">Garamond系・細罫線。テロップは最小限。</div></div>
+      <div class="t-cell"><span class="label">Pace</span><div class="val">間を活かす</div><div class="desc">2〜4秒カット。早口・ジャンプカット禁。</div></div>
+      <div class="t-cell"><span class="label">Music</span><div class="val">弦楽 / Piano</div><div class="desc">弦楽四重奏・ジャズピアノ・低音アンビエント。</div></div>
+      <div class="t-cell"><span class="label">Cast</span><div class="val">30〜40代スーツ</div><div class="desc">紺・チャコール、清潔感、低音ボイス。</div></div>
+      <div class="t-cell"><span class="label">Location</span><div class="val">VIPルーム固定</div><div class="desc">木質×レザー×間接照明。場所が世界観を担う。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 06 ポートフォリオ 2x2 ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 06</span>
+    <span class="section-label fade">Portfolio Design</span>
+    <h2 class="section-title fade">4本のポートフォリオ設計</h2>
+    <p class="section-lead fade">買取2本で「広く認知 → 深く信頼」、販売2本で「ロジックで指名 → 世界観で記憶」。<br>横軸＝アプローチ、縦軸＝目的の階段で4本を配置しています。</p>
+
+    <div class="matrix fade">
+      <div></div>
+      <div class="m-h">Approach A — ロジック / リーチ</div>
+      <div class="m-h">Approach B — 情緒 / ステータス</div>
+
+      <div class="m-axis">買取 ／ Buying</div>
+      <div class="m-cell"><span class="num">01</span><h4>買取TOP5（情報番組型）</h4><p>広域KW（ブランド名×買取）からの新規リーチ獲得。雑学とランキングで認知を作る。</p></div>
+      <div class="m-cell"><span class="num">02</span><h4>買取ドラマ（コンシェルジュ）</h4><p>「父の遺品ロールプレイ」で温かみを表現。比較段階で情緒の決定打になる。</p></div>
+
+      <div class="m-axis">販売 ／ Selling</div>
+      <div class="m-cell"><span class="num">03</span><h4>販売Q&A（コンシェルジュ語り）</h4><p>「どこで買うか」のリサーチ層に、無在庫オーダー制と1,000点ストックでロジカルに指名獲得。</p></div>
+      <div class="m-cell"><span class="num">04</span><h4>販売シネマティックMV</h4><p>演者・ナレーションなしの世界観動画。ブランドそのものを記憶させ、第一想起を取る。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 07 強みカバレッジ ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 07</span>
+    <span class="section-label fade">Coverage Map</span>
+    <h2 class="section-title fade">強み × 4本のカバレッジ</h2>
+    <p class="section-lead fade">「強みを4本に均等にばら撒く」のではなく、各本に主軸2〜3つを絞ることで「この動画は何を伝えるか」を明確にしました。<br>VIPルーム（G）だけは全4本に通底させ、ブランド連想を強化します。</p>
+
+    <div class="fade" style="overflow-x:auto">
+    <table class="cover-table">
+      <thead>
+        <tr><th>強み</th><th>① 買取TOP5</th><th>② 買取ドラマ</th><th>③ 販売Q&A</th><th>④ 販売MV</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A. 海外コレクターからのオーダー</td><td class="b">◎</td><td class="b-sub">○</td><td class="b-sub">○</td><td></td></tr>
+        <tr><td>B. 30か国超のネットワーク</td><td class="b">◎</td><td></td><td class="b-sub">○</td><td></td></tr>
+        <tr><td>C. 無在庫オーダー制</td><td></td><td></td><td class="b">◎</td><td></td></tr>
+        <tr><td>D. 常時1,000点超 ／ 高額帯取扱</td><td></td><td></td><td class="b">◎</td><td class="b-sub">○</td></tr>
+        <tr><td>E. 国家資格技師の真贋 ／ 5年保証</td><td></td><td class="b">◎</td><td class="b-sub">○</td><td></td></tr>
+        <tr><td>F. 温かみ・1対1コンシェルジュ</td><td></td><td class="b">◎</td><td></td><td class="b-sub">○</td></tr>
+        <tr class="hl"><td>G. 渋谷マークシティのVIPルーム</td><td class="b-sub">○</td><td class="b">◎</td><td class="b-sub">○</td><td class="b">◎</td></tr>
+        <tr><td>H. 秘匿性を求めるオーナー利用</td><td></td><td></td><td class="b-sub">○</td><td class="b-sub">○</td></tr>
+        <tr><td>I. ハイブランド網羅</td><td class="b">◎</td><td></td><td></td><td class="b-sub">○</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="cover-note fade">◎ = 主軸として描く ／ ○ = 補助として触れる ／ G（VIPルーム）は全4本通底</p>
+  </div>
+</section>
+
+<!-- ==================== 08 企画① 買取TOP5 ==================== -->
+<section class="plan">
+  <div class="container">
+    <div class="plan-head fade">
+      <div class="plan-no">01</div>
+      <div class="right">
+        <span class="cat">Buying — Information Program</span>
+        <h3 class="title">買取価格が高いブランド TOP5（情報番組型・高級版）</h3>
+        <p class="sub">カウントダウンTOP5の骨格を踏襲しつつ、煽りの情報番組ではなく「専門誌の編集長が語るドキュメンタリー」のトーンに変換。海外オーダーの背景知識で“品格”を作ります。</p>
+      </div>
+    </div>
+
+    <div class="plan-meta fade">
+      <div class="pm"><span class="l">Aim</span><div class="v">ブランド名×買取の検索KWで新規リーチ獲得。指名検索／LINE登録への導線。</div></div>
+      <div class="pm"><span class="l">Target</span><div class="v">高級時計を所有する40-60代男性。相場を理解した上で適正価格を求める層。</div></div>
+      <div class="pm"><span class="l">Length / Cast</span><div class="v">60秒 ／ 演者1名（30-40代男性・スーツ）</div></div>
+    </div>
+
+    <div class="ref-row fade">
+      <div class="ref">
+        <span class="l">Reference Format</span>
+        <a href="https://youtube.com/shorts/Q3IFEZ0mFus" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/Q3IFEZ0mFus/hqdefault.jpg" alt="参考動画 買取TOP5">
+          <div class="cap"><b>YouTube Shorts ／ TOP5カウントダウン形式</b><br>骨格は踏襲、トーンは富裕層向けに昇華。</div>
+        </a>
+      </div>
+      <div class="ref" style="grid-column:span 2">
+        <span class="l">Strengths Mapped</span>
+        <div class="ref-badges">
+          <span class="badge-pill">A 海外コレクター（主軸）</span>
+          <span class="badge-pill">B 30か国ネットワーク（主軸）</span>
+          <span class="badge-pill">I ハイブランド網羅（主軸）</span>
+          <span class="badge-pill muted">G VIPルーム背景</span>
+        </div>
+        <div class="cap" style="margin-top:14px">主軸3つに絞り、海外オーダーを刷り込む構造。各順位の冒頭で必ず「海外で評価されている理由」に触れる。</div>
+      </div>
+    </div>
+
+    <span class="subhead fade">Storyboard & Script — 構図イメージと台本（仮案）</span>
+    <div class="script fade">
+      <div class="script-head">
+        <span class="l">Buying 01 ／ 60sec</span>
+        <span class="meta">演者1名 ／ VIPルーム ／ ローマ数字テロップ</span>
+      </div>
+      <div class="script-colhead">
+        <span>Time</span><span>構図 ／ Frame</span><span>セリフ ／ 演出</span>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">0–3s</div>
+        <div class="frame">
+          <span class="ftag">Macro Open</span>
+          <div class="fdesc">真っ黒画面 → 文字盤クローズアップ（Patek Nautilus）。窓光が一筋差し込む。テロップは中央セリフ体。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／SE</span>
+          <div class="dir">リューズの巻き音「カチッ…カチッ」のみ。BGMはまだ入らず、無音で引き込む。</div>
+          <span class="tele">テロップ：2026 高額買取ブランド V</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">3–9s</div>
+        <div class="frame">
+          <span class="ftag">Bust-up</span>
+          <div class="fdesc">演者バストアップ、正面固定1カメ。VIPルーム背景は8.0以上のボケ。レンブラント光。下部テロップに小さく「日本時計堂｜時計コンシェルジュ」。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（低音・等倍速）</span>
+          <div class="line">「香港、ドバイ、ニューヨーク。世界中のコレクターが、いま日本に向けてオーダーを出している時計があります。日本時計堂が見ている、2026年の買取相場 トップ5。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">9–17s</div>
+        <div class="frame">
+          <span class="ftag">V位 — Inserts</span>
+          <div class="fdesc">実機回転インサート（Breitling Navitimer 想定）→ ブランドロゴ → 演者カットバック。ローマ数字「V」を画角左上に静止表示。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（V位｜Breitling Navitimer 想定）</span>
+          <div class="line">「第5位、ブライトリング ナビタイマー。航空計算尺を備えた、パイロットの実用機。中東のコレクターから “あの黒文字盤”の指名買いが続いています。相場は、おおよそ●●万円から。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">17–25s</div>
+        <div class="frame">
+          <span class="ftag">IV位 — Inserts</span>
+          <div class="fdesc">実機回転（Vacheron Overseas 想定）→ ベゼルのマルタ十字インサート。ローマ数字「IV」。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（IV位｜Vacheron Constantin Overseas 想定）</span>
+          <div class="line">「第4位、ヴァシュロン・コンスタンタン オーヴァーシーズ。世界三大時計の中で、最も生産数が少ないスポーツモデル。香港の若い富裕層が、こぞって探しています。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">25–33s</div>
+        <div class="frame">
+          <span class="ftag">III位 — Inserts</span>
+          <div class="fdesc">実機回転（AP Royal Oak 想定）→ タペストリー文字盤マクロ。ローマ数字「III」。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（III位｜Audemars Piguet Royal Oak 想定）</span>
+          <div class="line">「第3位、オーデマ・ピゲ ロイヤルオーク。八角形ベゼルのタペストリー文字盤は、いまNYで定価の倍値が当たり前。日本市場の状態の良い個体を、海外バイヤーが探し続けています。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">33–41s</div>
+        <div class="frame">
+          <span class="ftag">II位 — Inserts</span>
+          <div class="fdesc">実機回転（Richard Mille RM11 想定）→ スケルトンムーブメントのスローインサート。ローマ数字「II」。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（II位｜Richard Mille RM11 想定）</span>
+          <div class="line">「第2位、リシャール・ミル RM11。F1のエンジニアリングを腕に乗せた一本。ドバイのオークションでは、過去最高額を更新中です。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">41–50s</div>
+        <div class="frame">
+          <span class="ftag">I位 — Climax</span>
+          <div class="fdesc">実機ピン送り（Patek Nautilus 5711 想定）→ 演者カットバック。ローマ数字「I」を中央大きく。クライマックスの照明1段強める。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（I位｜Patek Philippe Nautilus 5711 想定）</span>
+          <div class="line">「そして第1位、パテック・フィリップ ノーチラス 5711。生産終了から3年。世界の在庫が枯れ、いま手放せば、購入時の3倍を超える査定も珍しくありません。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">50–57s</div>
+        <div class="frame">
+          <span class="ftag">Closing Bust-up</span>
+          <div class="fdesc">演者バストアップ。背景ボケに実機5本が並ぶシルエットを追加。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（クロージング）</span>
+          <div class="line">「私たちは、30か国を超えるコレクターのネットワークから、日本国内では出せない価格をお出ししています。お持ちの一本の、本当の価値を。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">57–60s</div>
+        <div class="frame">
+          <span class="ftag">Logo / CTA</span>
+          <div class="fdesc">黒背景にロゴ＋セリフ体タグライン。右下にQRコード控えめ。秒針一拍で着地。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— ロゴ／CTA</span>
+          <div class="dir">ナレーションなし。SEは秒針1拍のみ。</div>
+          <span class="tele">テロップ：LINEで査定 ／ 渋谷マークシティ 日本時計堂</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 09 企画② 買取ドラマ ==================== -->
+<section class="plan">
+  <div class="container">
+    <div class="plan-head fade">
+      <div class="plan-no">02</div>
+      <div class="right">
+        <span class="cat">Buying — Cinematic Drama</span>
+        <h3 class="title">時計を売ってみる導線動画（コンシェルジュ・ドラマ）</h3>
+        <p class="sub">2人ロールプレイの骨格は維持し、「父の遺品を持ち込んだ40代息子 × 日本時計堂コンシェルジュ」のドラマに置換。温かみ・人間的信頼感を、所作と間で表現します。</p>
+      </div>
+    </div>
+
+    <div class="plan-meta fade">
+      <div class="pm"><span class="l">Aim</span><div class="v">「父の遺品を売りたい」「相続した時計をどこに頼もうか」検索層を、VIPルーム体験まで連れて行く。</div></div>
+      <div class="pm"><span class="l">Target</span><div class="v">大手チェーンの機械的査定に違和感を持つ、40代以上の男性。</div></div>
+      <div class="pm"><span class="l">Length / Cast</span><div class="v">45秒 ／ 客役40代男性 ＋ コンシェルジュ役30-40代男性（白手袋・襟元バッジ）</div></div>
+    </div>
+
+    <div class="ref-row fade">
+      <div class="ref">
+        <span class="l">Reference Format</span>
+        <a href="https://youtube.com/shorts/3rfI4xH08pk" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/3rfI4xH08pk/hqdefault.jpg" alt="参考動画 ロールプレイ">
+          <div class="cap"><b>YouTube Shorts ／ 客役×査定士役の二人会話</b><br>コミカルな掛け合いではなく、ドラマ仕立てに昇華。</div>
+        </a>
+      </div>
+      <div class="ref" style="grid-column:span 2">
+        <span class="l">Strengths Mapped</span>
+        <div class="ref-badges">
+          <span class="badge-pill">F 温かみ・1対1（主軸）</span>
+          <span class="badge-pill">E 国家資格技師／5年保証（主軸）</span>
+          <span class="badge-pill">G VIPルーム（主軸）</span>
+          <span class="badge-pill muted">A 海外コレクター</span>
+        </div>
+        <div class="cap" style="margin-top:14px">「父の遺品を持ち込んだ40代息子 × 日本時計堂コンシェルジュ」のドラマで、温かみと専門性を所作で見せる。</div>
+      </div>
+    </div>
+
+    <span class="subhead fade">Storyboard & Script — 構図イメージと台本（仮案）</span>
+    <div class="script fade">
+      <div class="script-head">
+        <span class="l">Buying 02 ／ 45sec</span>
+        <span class="meta">演者2名 ／ VIPルーム ／ 横並び斜め構図</span>
+      </div>
+      <div class="script-colhead">
+        <span>Time</span><span>構図 ／ Frame</span><span>セリフ ／ 演出</span>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">0–4s</div>
+        <div class="frame">
+          <span class="ftag">Door / Greeting</span>
+          <div class="fdesc">VIPルームの木製ドアが開く。引きの構図。コンシェルジュが軽く一礼で迎える。テロップは中央フェードイン。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／SE／BGM</span>
+          <div class="dir">ドアの音／木目のきしみ。BGMはピアノソロ（低音、3音だけのモチーフ）。</div>
+          <span class="tele">テロップ：父が遺した、一本を。</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">4–12s</div>
+        <div class="frame">
+          <span class="ftag">Hand / Case Open</span>
+          <div class="fdesc">ソファに座る客の手元クローズアップ → 木製ケースを開ける所作 → 中の時計インサート（仮：Rolex Submariner ヴィンテージ）。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">客（ぽつり）</span>
+          <div class="line">「父が、ずっと大事にしていたものなんです。値段がつくのか、よく分からなくて。」</div>
+          <span class="speaker" style="margin-top:12px">コンシェルジュ（柔らかく）</span>
+          <div class="line">「お父様が、長く愛されたんですね。少し、拝見させてください。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">12–22s</div>
+        <div class="frame">
+          <span class="ftag">Loupe / Authentication</span>
+          <div class="fdesc">白手袋を着用するインサート → ルーペで文字盤・ベゼル・裏蓋を順に確認する手元。ルーペ越しの文字盤マクロも挟む。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">コンシェルジュ（独白するように）</span>
+          <div class="line">「リファレンスは1680、1970年代の生産。文字盤の焼け方、針の状態 …… 本物です。状態も、当時のオーナーが大切にされていた証拠ですね。」</div>
+          <div class="dir">SE：ルーペを置く音、時計が回る微音。テロップなし。</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">22–32s</div>
+        <div class="frame">
+          <span class="ftag">Eye-line Match</span>
+          <div class="fdesc">コンシェルジュが顔を上げ、客と目線を合わせる横並び斜めワンカット。襟元の「国家資格技師」バッジが画に入る。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">コンシェルジュ</span>
+          <div class="line">「弊社の国家資格技師が真贋を確認しました。査定額は、●●,●●●,●●●円。お父様が買われた時の、何倍にもなっています。」</div>
+          <div class="dir">客は驚きより、深く頷く（“納得・安堵”の表情）。</div>
+          <span class="tele">テロップ：査定額 ●●,●●●,●●●円（セリフ体・細罫線・フェード）</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">32–40s</div>
+        <div class="frame">
+          <span class="ftag">Two-Hand Receive</span>
+          <div class="fdesc">コンシェルジュが時計を両手で受ける所作。2人の手が画の中央で交わるカット。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">コンシェルジュ</span>
+          <div class="line">「この一本は、香港のコレクターがずっと探していたモデルです。お父様のお気持ちごと、責任を持ってお預かりします。」</div>
+          <span class="speaker" style="margin-top:12px">客（小さく頷く）</span>
+          <div class="line">「お願いします。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">40–45s</div>
+        <div class="frame">
+          <span class="ftag">Logo / CTA</span>
+          <div class="fdesc">黒背景にロゴ＋セリフ体タグライン。右下にQRコード控えめ。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— ロゴ／CTA</span>
+          <div class="dir">ピアノモチーフが静かに着地。</div>
+          <span class="tele">テロップ：LINEから査定 ／ 渋谷マークシティ 日本時計堂 VIPルーム</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 10 企画③ 販売Q&A ==================== -->
+<section class="plan">
+  <div class="container">
+    <div class="plan-head fade">
+      <div class="plan-no">03</div>
+      <div class="right">
+        <span class="cat">Selling — Q&A Concierge</span>
+        <h3 class="title">「今、時計を買うならどこで？」（コンシェルジュ語りQ&A）</h3>
+        <p class="sub">アトム式Q&Aの骨格は維持。コメント風の煽り吹き出しを「黒背景＋金枠の品ある引用カード」に置換し、断定的な早口専門家ではなく“相談を受け止めるコンシェルジュ”の口調で展開します。</p>
+      </div>
+    </div>
+
+    <div class="plan-meta fade">
+      <div class="pm"><span class="l">Aim</span><div class="v">「高級時計 どこで買う」「正規店 vs 並行店」のリサーチ層を、指名検索／LINE相談に集約。</div></div>
+      <div class="pm"><span class="l">Target</span><div class="v">これから1本目／買い増しを検討する30-50代男性経営者・士業。</div></div>
+      <div class="pm"><span class="l">Length / Cast</span><div class="v">45秒 ／ 演者1名（30-40代男性・紺スーツ）</div></div>
+    </div>
+
+    <div class="ref-row fade">
+      <div class="ref">
+        <span class="l">Reference Format</span>
+        <a href="https://youtube.com/shorts/mm1Kmc-J5NU" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/mm1Kmc-J5NU/hqdefault.jpg" alt="参考動画 Q&A">
+          <div class="cap"><b>YouTube Shorts ／ Q&A 1人語り</b><br>煽り口調をやめ、知的な“相談相手”の語り口へ。</div>
+        </a>
+      </div>
+      <div class="ref" style="grid-column:span 2">
+        <span class="l">Strengths Mapped</span>
+        <div class="ref-badges">
+          <span class="badge-pill">C 無在庫オーダー制（主軸）</span>
+          <span class="badge-pill">D 1,000点超／高額帯（主軸）</span>
+          <span class="badge-pill muted">B 30か国</span>
+          <span class="badge-pill muted">E 5年保証</span>
+          <span class="badge-pill muted">A 海外</span>
+          <span class="badge-pill muted">H 秘匿性 ※要相談</span>
+        </div>
+        <div class="cap" style="margin-top:14px">「正規店 vs 並行店」のリサーチ層に、無在庫オーダー制と1,000点ストックでロジカルに指名獲得。</div>
+      </div>
+    </div>
+
+    <span class="subhead fade">Storyboard & Script — 構図イメージと台本（仮案）</span>
+    <div class="script fade">
+      <div class="script-head">
+        <span class="l">Selling 01 ／ 45sec</span>
+        <span class="meta">演者1名 ／ 縦構図 ／ コンシェルジュ語り</span>
+      </div>
+      <div class="script-colhead">
+        <span>Time</span><span>構図 ／ Frame</span><span>セリフ ／ 演出</span>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">0–3s</div>
+        <div class="frame">
+          <span class="ftag">Q. Card</span>
+          <div class="fdesc">黒背景＋金枠の縦長カード。左上に小さく "Q." セリフ体。中央に質問テキスト。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／SE／BGM</span>
+          <div class="dir">紙をめくる微音SE。BGMはジャズピアノ（控えめ、ベース音中心）。</div>
+          <span class="tele">テロップ：Q. 今、時計を買うなら、どこで？</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">3–8s</div>
+        <div class="frame">
+          <span class="ftag">Bust-up Open</span>
+          <div class="fdesc">演者バストアップ、縦構図。VIPルーム背景ボケ。テロップは右下に①②③が順次フェード。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者（落ち着いた知的トーン）</span>
+          <div class="line">「結論から申し上げます。日本時計堂です。理由を、3つお話しします。」</div>
+          <span class="tele">テロップ：① 価格 ② 在庫 ③ 安心（順次フェード）</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">8–20s</div>
+        <div class="frame">
+          <span class="ftag">Compare Insert</span>
+          <div class="fdesc">3カット切替（正規店／一般並行店／日本時計堂）→ 全画面に4列ミニマル比較テーブル。ゴールド細罫線のみ。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者</span>
+          <div class="line">「正規店は抽選、並行店は在庫が限定的。私たちは常時1,000点を超えるストックと、全品5年保証でお選びいただけます。」</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">20–32s</div>
+        <div class="frame">
+          <span class="ftag">Diagram Insert</span>
+          <div class="fdesc">図解インサート（黒背景＋ゴールド線で「中間マージン／在庫リスク／無在庫オーダー制」のフロー）。3要素を順に強調。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者</span>
+          <div class="line">「特に、3,000万、5,000万円クラス。中間マージンと在庫リスクがない無在庫オーダー制だからこそ、高額になるほど割引率は大きくなります。世界30か国のネットワークから、お探しの一本をお持ちします。」</div>
+          <span class="tele">テロップ：無在庫オーダー制 ／ 30か国ネットワーク</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">32–40s</div>
+        <div class="frame">
+          <span class="ftag">Hand Close-up</span>
+          <div class="fdesc">演者→実機の手元アップ（Richard Mille想定）。文字盤の反射を強調。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">演者</span>
+          <div class="line">「ネットでは出てこないモデルも、世界のディーラーから取り寄せます。芸能人やアスリート、経営者の方々も、人目を避けて、ここで一本を選ばれています。」</div>
+          <div class="dir">※「人目を避けて」は山口様にON/OFFをご確認のうえ採否決定。</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">40–45s</div>
+        <div class="frame">
+          <span class="ftag">Logo / CTA</span>
+          <div class="fdesc">黒背景にロゴ＋セリフ体タグライン。右下にQRコード控えめ。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— ロゴ／CTA</span>
+          <div class="dir">秒針一拍で着地。</div>
+          <span class="tele">テロップ：LINEからご相談 ／ 渋谷マークシティ 日本時計堂</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="subhead fade" style="margin-top:48px">Insert Mock-up — 比較テーブル</span>
+    <table class="cmp fade">
+      <thead><tr><th></th><th>価格</th><th>在庫</th><th>対応</th><th>保証</th></tr></thead>
+      <tbody>
+        <tr><td>正規店</td><td>定価</td><td>抽選 / 数年待ち</td><td>一律</td><td>あり</td></tr>
+        <tr><td>一般並行店</td><td>高い</td><td>限定的</td><td>機械的</td><td>限定</td></tr>
+        <tr class="us"><td>日本時計堂</td><td>適正</td><td>常時1,000点超</td><td>1対1コンシェルジュ</td><td>全品5年保証</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<!-- ==================== 11 企画④ 販売MV ==================== -->
+<section class="plan">
+  <div class="container">
+    <div class="plan-head fade">
+      <div class="plan-no">04</div>
+      <div class="right">
+        <span class="cat">Selling — Cinematic Brand Film</span>
+        <h3 class="title">シネマティックMV（ブランディング）</h3>
+        <p class="sub">演者・ナレーションなし。音と光と所作だけで世界観を伝えます。Patek／Richard Milleの公式広告に近い、ハイブランド広告のトーンを目指します。</p>
+      </div>
+    </div>
+
+    <div class="plan-meta fade">
+      <div class="pm"><span class="l">Aim</span><div class="v">「日本時計堂」というブランドそのものを世界観として記憶させ、第一想起を取る。</div></div>
+      <div class="pm"><span class="l">Target</span><div class="v">複数本所有のコレクター層／既購入層へのリターゲティング。</div></div>
+      <div class="pm"><span class="l">Length / Cast</span><div class="v">20秒 ／ 演者なし（白手袋の手元のみ1カット）</div></div>
+    </div>
+
+    <div class="ref-row fade">
+      <div class="ref">
+        <span class="l">Reference Format</span>
+        <a href="https://youtube.com/shorts/11w1D10LX4w" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/11w1D10LX4w/hqdefault.jpg" alt="参考動画 商品紹介">
+          <div class="cap"><b>YouTube Shorts ／ 商品紹介</b><br>骨格は活用、TikTokのジンバル撮影手法も併用。</div>
+        </a>
+      </div>
+      <div class="ref" style="grid-column:span 2">
+        <span class="l">Strengths Mapped</span>
+        <div class="ref-badges">
+          <span class="badge-pill">G VIPルーム（主軸）</span>
+          <span class="badge-pill">F 白手袋＝預かる責任（主軸）</span>
+          <span class="badge-pill muted">D 高額帯時計の質感</span>
+          <span class="badge-pill muted">I ハイブランド網羅</span>
+          <span class="badge-pill muted">H 秘匿性 ※要相談</span>
+        </div>
+        <div class="cap" style="margin-top:14px">演者・ナレーションなし。音と光と所作だけで「日本時計堂」というブランドそのものを記憶させる。</div>
+      </div>
+    </div>
+
+    <span class="subhead fade">Storyboard & Script — 構図イメージと台本（仮案）</span>
+    <div class="script fade">
+      <div class="script-head">
+        <span class="l">Selling 02 ／ 20sec</span>
+        <span class="meta">演者・ナレーションなし ／ 音と光のみ</span>
+      </div>
+      <div class="script-colhead">
+        <span>Time</span><span>構図 ／ Frame</span><span>セリフ ／ 演出</span>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">0–2s</div>
+        <div class="frame">
+          <span class="ftag">Black → Light</span>
+          <div class="fdesc">真っ黒画面 → 文字盤クローズアップ（パテック想定）に光が一筋差し込む。極端な寄り。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／SE</span>
+          <div class="dir">リューズの巻き音「カチッ…カチッ」のみ。BGMはまだ入らない。</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">2–6s</div>
+        <div class="frame">
+          <span class="ftag">Dial Macro / Slow Hand</span>
+          <div class="fdesc">文字盤クローズアップ、ジンバルでゆっくり寄る → 秒針スロー。針先のハイライト。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／SE</span>
+          <div class="dir">秒針音をASMR的に強調。BGM（弦楽四重奏）はまだ入らず、無音の余韻を残す。</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">6–10s</div>
+        <div class="frame">
+          <span class="ftag">Movement / Bezel</span>
+          <div class="fdesc">裏スケルトンのムーブメント回転インサート → ベゼル質感マクロ。複数ブランドの切替で網羅性を示唆。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／音楽</span>
+          <div class="dir">弦楽四重奏（チェロ低音強め）がイン。秒針音と弦楽が重なる。</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">10–13s</div>
+        <div class="frame">
+          <span class="ftag">White Glove Hand</span>
+          <div class="fdesc">レザーソファ上の時計（Richard Mille想定）→ <strong>白手袋がそっと時計を持ち上げる手元のみ</strong>。所作で“預かる責任”を象徴化。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／SE</span>
+          <div class="dir">レザーの擦れ音。弦楽は続く。</div>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">13–17s</div>
+        <div class="frame">
+          <span class="ftag">VIP Room → Window</span>
+          <div class="fdesc">VIPルーム俯瞰（深いボケ）→ 窓越しの渋谷夜景／マークシティの輪郭。場所性で“ステータス”表現。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— 映像／音楽</span>
+          <div class="dir">弦楽が一段高まる。テロップは右下に極小で配置。</div>
+          <span class="tele">テロップ：渋谷マークシティ（極小・右下）</span>
+        </div>
+      </div>
+
+      <div class="script-row">
+        <div class="tc">17–20s</div>
+        <div class="frame">
+          <span class="ftag">Logo / Tagline</span>
+          <div class="fdesc">黒背景にロゴが浮かび上がる → タグラインが2秒静止。フェードアウト。</div>
+        </div>
+        <div class="body">
+          <span class="speaker">— ロゴ／タグライン</span>
+          <div class="dir">弦楽が静かに着地。</div>
+          <span class="tele">NIHON TOKEIDO ／ 最高水準の時計と、極上のサービスを。</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="subhead fade" style="margin-top:48px">Mood Board — 目指すビジュアルトーン</span>
+    <div class="mood fade">
+      <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80" alt="watch macro 1">
+      <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=600&q=80" alt="watch macro 2">
+      <img src="https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=600&q=80" alt="watch macro 3">
+      <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=600&q=80" alt="watch macro 4">
+      <img src="https://images.unsplash.com/photo-1532667449560-72a95c8d381b?auto=format&fit=crop&w=600&q=80" alt="watch macro 5">
+      <img src="https://images.unsplash.com/photo-1606293459339-aa5d34a7b0e1?auto=format&fit=crop&w=600&q=80" alt="watch macro 6">
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 12 撮影スケジュール／体制 ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 12</span>
+    <span class="section-label fade">Production</span>
+    <h2 class="section-title fade">撮影スケジュール ／ 制作体制</h2>
+    <p class="section-lead fade">VIPルームでの<strong>3時間まとめ撮り</strong>を基本設計とし、撮り順は「演者なし → 2名 → 1名×2」。事前のキャスティング・実機セッティング・カメラ設計を綿密に詰めることで、当日は撮影に集中できる体制を組みます。</p>
+
+    <div class="schedule fade">
+      <div class="sch-row"><span class="t">10:00</span><span class="ttl">販売④ シネマティックMV</span><span class="desc">演者なし／時計実機3-5本／白手袋／俯瞰機材。最も時間のかかる照明設計から着手。事前ライティング設計で時間圧縮。</span><span class="dur">60min</span></div>
+      <div class="sch-row"><span class="t">11:00</span><span class="ttl">買取② コンシェルジュドラマ</span><span class="desc">演者2名／時計1本／ルーペ／白手袋。事前リハーサル＋ワンカット長回しで効率化。</span><span class="dur">50min</span></div>
+      <div class="sch-row"><span class="t">11:50</span><span class="ttl">販売③ Q&A 1人語り</span><span class="desc">演者1名／実機チラ見せ1本／図解パネル。固定1カメ。台本完全暗記前提。</span><span class="dur">35min</span></div>
+      <div class="sch-row"><span class="t">12:25</span><span class="ttl">買取① TOP5 情報番組型</span><span class="desc">演者1名／時計5本／順位インサートカット。1ブランドあたり7分配分。</span><span class="dur">35min</span></div>
+      <div class="sch-row" style="background:var(--bg-soft)"><span class="t">13:00</span><span class="ttl"><strong>撮影完了 ／ Total 3.0h</strong></span><span class="desc">— 当日午前3時間で4本撮りきる設計。<br>現場効率化の前提：①事前リハ／②台本完全暗記／③カメラ・照明の事前設計。</span><span class="dur">—</span></div>
+    </div>
+
+    <div class="delivery">
+      <div class="d"><span class="l">Pre-Production</span><div class="v">Day 1 — 5</div><div class="sub">企画確定／キャスティング／実機選定／TOP5ブランド確定／台本リハ</div></div>
+      <div class="d"><span class="l">Shooting</span><div class="v">Day 6</div><div class="sub">VIPルーム 3時間まとめ撮り</div></div>
+      <div class="d"><span class="l">Editing</span><div class="v">Day 7 — 11</div><div class="sub">初稿提出／2回までの修正対応／カラーグレーディング／MA</div></div>
+      <div class="d"><span class="l">Delivery</span><div class="v">Day 11</div><div class="sub">縦横比3パターン（9:16 / 1:1 / 16:9）<br><strong>合計約11営業日で完納</strong></div></div>
+    </div>
+
+    <div class="team">
+      <div>
+        <h4>StockSun 制作体制</h4>
+        <p>300名超のクリエイターネットワークから、本案件は<strong>高級ブランド／プロダクト広告の実績者</strong>を中心にチーム編成。プロデューサー1名／ディレクター1名／カメラ1名＋助手／照明1名／ヘアメイク1名／編集1名の計7名体制を想定しています。</p>
+      </div>
+      <div>
+        <h4>窓口体制</h4>
+        <p>進行・クリエイティブ判断はStockSun（鵜飼）が単一窓口として担当。品質管理として「不安ゼロ推進部（富岡）」が並走し、進行遅延・不安点の即時解決にあたります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 13 実績 ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 13</span>
+    <span class="section-label fade">Track Record</span>
+    <h2 class="section-title fade">類縁ジャンルでの制作実績</h2>
+    <p class="section-lead fade">高級／プロダクト／ブランディング動画を中心に、世界観構築を伴う案件の実績を抜粋しています。</p>
+
+    <div class="works fade">
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1610017171036-91d3e2c5f3a7?auto=format&fit=crop&w=900&q=80" alt="DeLonghi">
+        <div class="body">
+          <span class="cat">Home Appliance</span>
+          <h4>デロンギ（DeLonghi）</h4>
+          <p>プレミアムキッチン家電のブランド動画 5本制作。プロダクトの質感表現と、暮らしの中での所有感を伝えるシリーズ。</p>
+        </div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=80" alt="SALONIA">
+        <div class="body">
+          <span class="cat">Beauty</span>
+          <h4>サロニア（SALONIA）</h4>
+          <p>美容家電の広告動画10本。世界観の統一を担保しつつ、用途別カットを大量生成する量産設計。</p>
+        </div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=900&q=80" alt="TASAKI">
+        <div class="body">
+          <span class="cat">Luxury Jewelry</span>
+          <h4>タサキ（TASAKI）</h4>
+          <p>ハイジュエリーブランドのイベント企画から撮影・編集まで一気通貫で担当。素材の輝きと所作を捉える設計。</p>
+        </div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80" alt="MLB">
+        <div class="body">
+          <span class="cat">Global Brand</span>
+          <h4>MLB 日本PR動画</h4>
+          <p>グローバルブランドの日本展開向けPR動画。世界観の翻訳と、現地視聴者への接続設計を担当。</p>
+        </div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=900&q=80" alt="Luxury Brand">
+        <div class="body">
+          <span class="cat">Premium Product</span>
+          <h4>その他 高級ブランド広告</h4>
+          <p>高単価プロダクトの広告動画を複数手掛けています。守秘案件のため詳細はオフラインにて。</p>
+        </div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="Network">
+        <div class="body">
+          <span class="cat">Network</span>
+          <h4>StockSun 認定パートナー</h4>
+          <p>300名超のクリエイターネットワークから、案件ごとに最適なフリーランス・専門会社をアサインする運営体制。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 14 見積もり ==================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num fade">— 14</span>
+    <span class="section-label fade">Estimate</span>
+    <h2 class="section-title fade">お見積もり</h2>
+    <p class="section-lead fade">トライアル4本（買取2／販売2）の制作費用一式です。<br>金額・諸経費の詳細は、企画・体制をご確認いただいたうえで別途ご提示いたします。</p>
+
+    <div class="quote fade">
+      <div class="quote-head">
+        <h3>Production Estimate</h3>
+        <span class="ph">※ Amount to be provided separately</span>
+      </div>
+
+      <div class="q-row head">
+        <div>項目 ／ Item</div>
+        <div>数量 ／ Qty</div>
+        <div style="text-align:right">金額 ／ Amount</div>
+      </div>
+
+      <div class="q-row">
+        <div class="ttl">企画・構成・絵コンテ
+          <span class="sub">企画意図／キャラクター設計／絵コンテ／台本</span>
+        </div>
+        <div class="qty">4本一式</div>
+        <div class="price" style="text-align:right">— ／ TBD</div>
+      </div>
+      <div class="q-row">
+        <div class="ttl">撮影（VIPルーム1日まとめ撮り）
+          <span class="sub">Pro撮影スタッフ7名体制／機材／キャスティング</span>
+        </div>
+        <div class="qty">1日</div>
+        <div class="price" style="text-align:right">— ／ TBD</div>
+      </div>
+      <div class="q-row">
+        <div class="ttl">編集（4本）
+          <span class="sub">初稿＋2回修正／カラーグレーディング／MA／BGM選定</span>
+        </div>
+        <div class="qty">4本</div>
+        <div class="price" style="text-align:right">— ／ TBD</div>
+      </div>
+      <div class="q-row">
+        <div class="ttl">アスペクト比展開
+          <span class="sub">9:16 ／ 1:1 ／ 16:9 の3パターン納品</span>
+        </div>
+        <div class="qty">12本</div>
+        <div class="price" style="text-align:right">— ／ TBD</div>
+      </div>
+      <div class="q-row">
+        <div class="ttl">ディレクション・進行管理
+          <span class="sub">単一窓口／品質管理（不安ゼロ推進部）</span>
+        </div>
+        <div class="qty">一式</div>
+        <div class="price" style="text-align:right">— ／ TBD</div>
+      </div>
+
+      <div class="q-total">
+        <span class="l">Total（税抜）</span>
+        <span class="v">— ／ TBD</span>
+      </div>
+
+      <p class="quote-note">※ 上記は4本セットでの一式金額の枠組みです。本数増減・追加カット・タレントキャスティングの有無により変動いたします。<br>※ 別途交通費・宿泊費等の実費精算が発生する場合は事前にご相談いたします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 15 CLOSING ==================== -->
+<section class="closing">
+  <div class="container">
+    <span class="label">Thank you</span>
+    <h2>最高水準の時計と、<br>極上のサービスを。</h2>
+    <p class="sub">日本時計堂の世界観に、<br>StockSunが映像で寄り添えますことを願って。</p>
+
+    <div class="foot">
+      <div class="brand">STOCKSUN</div>
+      <div>akihiro.ukai@grill.co.jp ／ 2026.04.28</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
